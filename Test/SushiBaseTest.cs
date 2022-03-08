@@ -25,13 +25,19 @@ namespace AutoTest1.Test
             sushiMeniuPage = new SushiMeniuPage(driver);
             drinksMeniuPage = new DrinksMeniuPage(driver);
             }
+        [TearDown]
+        public static void TearDown()
+        {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                MyScreenshot.TakeScreenshot(driver);
+            }
+        }
 
         [OneTimeTearDown]
         public static void TearDown()
             {
             //driver.Quit();
             }
-        
-
     }
 }
