@@ -37,7 +37,7 @@ namespace AutoTest1.Test
         [OneTimeTearDown]
         public static void TearDown()
             {
-            //driver.Quit();
+            driver.Quit();
             }
     }
 }
