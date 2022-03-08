@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 
@@ -13,7 +13,7 @@ namespace AutoTest1.Page
             Driver = webDriver;
             Driver.Manage().Window.Maximize();
         }
-        public WebDriverWait ExplicitWait (int seconds = 3) // pakeisti metoda i explicit wait'a
+        public WebDriverWait ExplicitWait (int seconds = 3) 
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
             return wait;
@@ -22,6 +22,5 @@ namespace AutoTest1.Page
         {
            Driver.Quit();
         }
-
     }
 }
