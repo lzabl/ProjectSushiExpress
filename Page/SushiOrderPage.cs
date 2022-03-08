@@ -4,7 +4,6 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-
 namespace AutoTest1.Page
 {
     public class SushiOrderPage : SushiBasePage
@@ -22,7 +21,7 @@ namespace AutoTest1.Page
             Assert.AreEqual(price, sushiKappaMakiPrice, "Price is wrong");
         }
 
-        public void AddToCart2xnr1(string amount) //++ 
+        public void AddToCart2xnr1(string amount) 
         {
             sushiKappaMaki.Click();
 
@@ -33,17 +32,16 @@ namespace AutoTest1.Page
             addToCart.Click();
 
             string cartContent = Driver.FindElement(By.CssSelector("#header > div > div > div:nth-child(2) > div > div.top-mini-cart > a")).Text;
-
             Assert.AreEqual(amount, cartContent, "Wrong amount added to cart");
 
         }
-        public void AddToCartNr18() //++
+        public void AddToCartNr18() 
         {
             sushiCalifornia.Click();
             addToCart.Click();
            
         }
-        public void ChangeQuantity(string message) //++
+        public void ChangeQuantity(string message) 
         {
             cart.Click();
             quantityPlus.Click();
@@ -52,12 +50,7 @@ namespace AutoTest1.Page
             wait.Until(d => d.FindElement(By.CssSelector("body > main > section > div > div > div > div > div.woocommerce-notices-wrapper > div")).Displayed);
           
             string updateMessage = Driver.FindElement(By.CssSelector("body > main > section > div > div > div > div > div.woocommerce-notices-wrapper > div")).Text;
-          
             Assert.AreEqual(message, updateMessage, "Wrong message appeared");
         }
-
     }
-
 }
-
-
