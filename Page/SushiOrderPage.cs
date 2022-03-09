@@ -9,8 +9,8 @@ namespace AutoTest1.Page
     public class SushiOrderPage : SushiBasePage
     {
         private IWebElement sushiKappaMaki => Driver.FindElement(By.CssSelector("#filtered > div.col-lg-4.col-md-6.col-xs-12.post-443.product.type-product.status-publish.has-post-thumbnail.product_cat-susiai.product_cat-vegetariski.instock.taxable.shipping-taxable.purchasable.product-type-simple"));
+        private IWebElement sushiCalifornia => Driver.FindElement(By.CssSelector("#filtered > div.col-lg-4.col-md-6.col-xs-12.post-485.product.type-product.status-publish.has-post-thumbnail.product_cat-su-krabu-lazdelemis.product_cat-susiai.product_cat-top-prekes.instock.taxable.shipping-taxable.purchasable.product-type-simple > div"));
 
-        private IWebElement sushiCalifornia => Driver.FindElement(By.CssSelector("#filtered > div.col-lg-4.col-md-6.col-xs-12.post-485.product.type-product.status-publish.has-post-thumbnail.product_cat-su-krabu-lazdelemis.product_cat-susiai.product_cat-top-prekes.last.instock.taxable.shipping-taxable.purchasable.product-type-simple > div"));
         private IWebElement addToCart => Driver.FindElement(By.CssSelector(".single_add_to_cart_button"));
         private IWebElement cart => Driver.FindElement(By.CssSelector("#header > div > div > div:nth-child(2) > div > div.top-mini-cart > a"));
         private IWebElement quantityPlus => Driver.FindElement(By.ClassName("quantity-plus"));
