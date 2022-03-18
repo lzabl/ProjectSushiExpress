@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutoTest1.Page
 {
@@ -13,7 +8,8 @@ namespace AutoTest1.Page
         private const string PageAddress = "https://sushiexpress.lt/";
         private IWebElement MeniuPage => Driver.FindElement(By.Id("menu-item-311"));
         private IWebElement SushiMeniu => Driver.FindElement(By.Id("menu-item-417"));
-       
+        private IWebElement Checkbox1 => Driver.FindElement(By.XPath("//label[text()='Nigiri']"));
+
         public SushiMeniuPage(IWebDriver webdriver) : base(webdriver) { }
 
         public void NavigateToPage()
@@ -32,8 +28,6 @@ namespace AutoTest1.Page
         }
         public void FaveSushiCheckboxes(string sushiType)
         {
-            IWebElement Checkbox1 = Driver.FindElement(By.XPath("//label[text()='Nigiri']"));
-
             Checkbox1.Click();
             string Nigiri = Driver.FindElement(By.XPath("//label[text()='Nigiri']")).Text;
 
