@@ -8,19 +8,18 @@ namespace AutoTest1.Page
     {
         protected static IWebDriver Driver;
 
-        public SushiBasePage (IWebDriver webDriver)
+        public SushiBasePage(IWebDriver webDriver)
         {
             Driver = webDriver;
-            Driver.Manage().Window.Maximize();
         }
-        public WebDriverWait ExplicitWait (int seconds = 3) 
+        public WebDriverWait GetWait(int seconds = 5) // pakeisti metoda i explicit wait'a
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
             return wait;
         }
         public void CloseBrowser()
         {
-           Driver.Quit();
+            Driver.Quit();
         }
     }
 }
