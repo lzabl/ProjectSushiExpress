@@ -1,11 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutoTest1.Driver
 {
@@ -37,13 +32,8 @@ namespace AutoTest1.Driver
                     driver = new ChromeDriver();
                     break;
             }
-
+                driver.Manage().Window.Maximize();
                 return driver;
         }
     }
 }
-/* ChromeOptions options = new ChromeOptions();
-chromeOptions.AddArgument(....);
-ChromeDriver webDriver = new ChromeDriver(chromeOptions);
-*/ 
-
